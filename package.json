@@ -1,0 +1,14 @@
+{
+  "name": "ppe-monitor",
+  "version": "0.1.0",
+  "description": "현장 시야 — 웹캠 기반 PPE 모니터링 프론트엔드",
+  "private": true,
+  "scripts": {
+    "dev": "node server.cjs",
+    "start": "node server.cjs",
+    "check": "node --check app.js && node --check server.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

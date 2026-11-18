@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="노트북 웹캠과 보호구 클래스별 탐지 현황을 확인하는 모니터링 대시보드"><title>현장 시야 · PPE 모니터링</title><link rel="stylesheet" href="./styles.css"></head>
+<body>
+<aside class="sidebar"><a class="brand" href="./" aria-label="현장 시야 홈"><span class="brand-icon">◈</span><span>현장 시야<small>SAFETY MONITOR</small></span></a><div class="nav-label">WORKSPACE</div><div class="nav-active"><span>▣</span> 실시간 모니터링</div><div class="sidebar-bottom"><span class="dot"></span> 프론트엔드 프로토타입<small>YOLOX · PPE DETECTION</small></div></aside>
+<main>
+<header><div class="breadcrumb">워크스페이스 <span>/</span> 실시간 모니터링</div><span class="outline-badge">LOCAL PREVIEW</span></header>
+<section class="heading"><div><div class="eyebrow">LIVE MONITORING</div><h1>실시간 안전 모니터링</h1><p>카메라 화면과 보호구 탐지 현황을 한눈에 확인하세요.</p></div><div class="backend"><span class="dot"></span> 백엔드 연결 전</div></section>
+<div class="notice"><span>ⓘ</span><p id="modeNotice">실제 카메라 모드입니다. 웹캠 화면을 확인할 수 있으며, 모델 탐지는 백엔드 연결 후 사용할 수 있습니다.</p></div>
+<section class="workspace">
+<div class="camera-card card"><div class="card-head"><div><h2>카메라 화면</h2><span id="cameraSubtitle">노트북 웹캠 · 연결 대기</span></div><span id="cameraBadge" class="badge">OFFLINE</span></div>
+<div class="viewport"><video id="video" autoplay playsinline muted hidden></video><div id="emptyState" class="empty-state"><div class="camera-icon">▣</div><h3 id="emptyTitle">카메라를 연결해 주세요</h3><p id="emptyText">아래 카메라 켜기 버튼을 누르고<br>브라우저의 카메라 접근을 허용하세요.</p></div><span class="viewport-corner">CAM 01</span><div id="demoWatermark" class="demo-watermark" hidden>테스트 모드 · 실제 탐지 아님</div></div>
+<div class="controls"><div class="mode-control"><label for="mode">실행 모드</label><select id="mode"><option value="camera">실제 카메라</option><option value="demo">테스트 데이터</option></select></div><div class="buttons"><button id="cameraButton" class="secondary">카메라 켜기</button><button id="detectButton" class="primary" disabled>탐지 시작</button></div></div>
+<div class="camera-footer"><span id="activity" role="status" aria-live="polite">카메라 연결 대기</span><span id="resolution">— × —</span></div>
+</div>
+<aside class="results card"><div class="card-head"><div><h2>현재 탐지 결과</h2><span id="resultSubtitle">현재 프레임 기준 · 6개 클래스</span></div><span class="small-icon">◎</span></div><div class="total"><span>탐지된 객체</span><div><strong id="totalCount">—</strong><span>개</span></div><small id="resultStatus">탐지 결과를 기다리고 있습니다</small></div><div class="class-list" id="classList"></div><div class="result-foot">같은 사람이 여러 클래스에 포함될 수 있습니다.<br>객체 수는 고유 인원수나 누적 인원수가 아닙니다.</div></aside>
+</section>
+<section class="card log-card"><div class="log-heading"><div><h2>세션 로그 <span id="logCount">0</span></h2><p>현재 페이지에서 발생한 동작을 표시합니다.</p></div><button id="clearLogs" class="text-button">로그 지우기</button></div><div id="logs" class="logs" role="log" aria-live="polite"><div class="log-empty">아직 기록이 없습니다. 카메라를 연결하거나 테스트를 시작하세요.</div></div></section>
+<footer><span>현장 시야 <b>·</b> PPE monitoring workspace</span><span>가중치 실행 및 서버 연동 예정</span></footer>
+</main><script src="./app.js"></script>
+</body></html>
